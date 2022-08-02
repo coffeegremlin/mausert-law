@@ -113,7 +113,7 @@ const Header = ({
                     )}>
                     <li>
                       {/* Add a jump to the contact section here */}
-                      <Link to="#0" onClick={closeMenu}>Who we are</Link>
+                      <Link to="#0" onClick={closeMenu}>About the Team</Link>
                     </li>
                   </ul>
                   {!hideSignin &&
