@@ -1,35 +1,45 @@
-import { useState, useEffect } from "react";
-import { Nav } from "./components/nav";
-import { Header } from "./components/header";
-import { About } from "./components/about";
-import { Team } from "./components/theTeam";
-import { Contact } from "./components/contact";
-import { FAQ } from "./components/faq";
-import JsonData from "./data/data.json";
-import SmoothScroll from "smooth-scroll";
-import "./App.css";
+import React, { useRef, useEffect } from 'react';
+import { useLocation, Switch } from 'react-router-dom';
+import AppRoute from './utils/AppRoute';
+import ScrollReveal from './utils/ScrollReveal';
+import ReactGA from 'react-ga';
 
-export const scroll = new SmoothScroll('a[href*="#"]', {
-  speed: 1000,
-  speedAsDuration: true,
-});
+// Layouts
+import LayoutDefault from './layouts/LayoutDefault';
+
+// Views 
+import Home from './views/Home';
+
+// Initialize Google Analytics
+ReactGA.initialize(process.env.REACT_APP_GA_CODE);
+
+const trackPage = page => {
+  ReactGA.set({ page });
+  ReactGA.pageview(page);
+};
 
 const App = () => {
-  const [landingPageData, setLandingPageData] = useState({});
+
+  const childRef = useRef();
+  let location = useLocation();
+
   useEffect(() => {
-    setLandingPageData(JsonData);
-  }, []);
+    const page = location.pathname;
+    document.body.classList.add('is-loaded')
+    childRef.current.init();
+    trackPage(page);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [location]);
 
   return (
-    <div>
-      <Nav />
-      <Header data={landingPageData.Header} />
-      <About data={landingPageData.About} />
-      <Team data={landingPageData.Team} />
-      <FAQ data={landingPageData.Faq} />
-      <Contact data={landingPageData.Contact} />
-    </div>
+    <ScrollReveal
+      ref={childRef}
+      children={() => (
+        <Switch>
+          <AppRoute exact path="/" component={Home} layout={LayoutDefault} />
+        </Switch>
+      )} />
   );
-};
+}
 
 export default App;
