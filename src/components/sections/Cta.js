@@ -53,15 +53,26 @@ const Cta = ({
         >
           <div className="cta-slogan">
             <h3 className="m-0">
-              For previewing layouts and visual?
+              Questions? Contact us:
               </h3>
           </div>
           <div className="cta-action">
-            <Input id="newsletter" type="email" label="Subscribe" labelHidden hasIcon="right" placeholder="Your best email">
+            <h3>Email: </h3>
+            <a href="mailto:mark@markmausert.law" type='email'>
+              mark@markmausert.law
+            </a>
+            <br/>
+            <h3>Telephone</h3>
+            <a
+              href="tel:(775)786-5477" onclick="ga('send', 'event', { eventCategory: 'Contact', eventAction: 'Call', eventLabel: 'Mobile Button'});">
+                (775) 786-5477
+            </a>
+
+            {/* <Input id="newsletter" type="email" label="Subscribe" labelHidden hasIcon="right" placeholder="Your best email">
               <svg width="16" height="12" xmlns="http://www.w3.org/2000/svg">
                 <path d="M9 5H1c-.6 0-1 .4-1 1s.4 1 1 1h8v5l7-6-7-6v5z" fill="#376DF9" />
               </svg>
-            </Input>
+            </Input> */}
           </div>
         </div>
       </div>
