@@ -85,7 +85,6 @@ const Header = ({
             'site-header-inner',
             bottomDivider && 'has-bottom-divider'
           )}>
-          <Logo />
           {!hideNav &&
             <>
               <button
@@ -113,7 +112,7 @@ const Header = ({
                     )}>
                     <li>
                       {/* Add a jump to the contact section here */}
-                      <Link to="#0" onClick={closeMenu}>About the Team</Link>
+                      {/* <Link to="#0" onClick={closeMenu}>About Us</Link> */}
                     </li>
                   </ul>
                   {!hideSignin &&
@@ -121,7 +120,7 @@ const Header = ({
                       className="list-reset header-nav-right"
                     >
                       <li>
-                        <Link to="#0" className="button button-primary button-wide-mobile button-sm" onClick={closeMenu}>Contact Us!</Link>
+                        <a href='https://goo.gl/maps/bhQJ7tzCWfoSvfki8' target="_blank" rel="noopener noreferrer" className="button button-primary button-wide-mobile button-med">Directions</a>
                       </li>
                     </ul>}
                 </div>

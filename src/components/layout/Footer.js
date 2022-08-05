@@ -38,14 +38,15 @@ const Footer = ({
           classNames(
             'site-footer-inner',
             topDivider && 'has-top-divider'
-          )}>
+            )}>
           <div className="footer-top space-between text-xxs">
-            <Logo />
-            <FooterSocial />
+            {/* <Logo /> */}
+            <h3>Our Socials</h3>
+              <FooterSocial />
           </div>
           <div className="footer-bottom space-between text-xxs invert-order-desktop">
             <FooterNav />
-            <div className="footer-copyright">Made by <a href="https://coffeegremlin.com/">Nathan Mausert</a>. All right reserved</div>
+            <div className="footer-copyright">Made by <a href="https://coffeegremlin.com/" target="_blank" rel="noopener noreferrer">Nathan Mausert</a>. With credit to <a href='https://github.com/cruip' target="_blank" rel="noopener noreferrer">Cruip</a>. All right reserved</div>
           </div>
         </div>
       </div>

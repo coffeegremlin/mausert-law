@@ -18,11 +18,12 @@ const FooterSocial = ({
     >
       <ul className="list-reset">
         <li>
-          <a href="https://facebook.com/">
+          {/* Add facebook here */}
+          <a href="https://facebook.com/" target="_blank" rel="noopener noreferrer">
             <svg
-              width="25"
-              height="25"
-              viewBox="0 0 16 16"
+              width="35"
+              height="35"
+              viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg">
               <title>Facebook</title>
               <path
